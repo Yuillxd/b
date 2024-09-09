@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactividad con Corazón</title>
+    <style>
+        body {
+            margin:  0;
+            padding: 0;
+            position:relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #800080; /* Fondo morado /
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .boop {
+            font-size: 5em;
+            color: #00FF00; / Verde /
+            margin-bottom: 20px;
+        }
+
+        .heart {
+            font-size: 10em; / Tamaño grande */
+            color: red;
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 20px;
+            position: relative;
+        }
+.heart span {
+            display: block;
+            font-size: 0.3em;
+            color: white;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #message {
+            display: none;
+            background-color: #00FF00; /* Verde */
+            color: white;
+            font-size: 2em;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        #cake {
+            display: none;
+            width: 200px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="boop">BOOP</div>
+    <div class="heart" id="heart">
+        ❤️ <span>CLICK 11 times</span>
+    </div>
+    <div id="message">HAPPY BIRTHDAY!!!</div>
+    <img id="cake" src="BIRTHDAYCAKE.png" alt="Cake">
+
+    <script>
+        let clickCount = 0;
+        const heart = document.getElementById('heart');
+        const message = document.getElementById('message');
+        const cake = document.getElementById('cake');
+
+        heart.addEventListener('click', function() {
+            clickCount++;
+            if (clickCount >= 11) {
+                heart.style.display = 'none'; // Ocultar el corazón
+                message.style.display = 'block'; // Mostrar el mensaje
+                cake.style.display = 'block'; // Mostrar la imagen del pastel
+            }
+        });
+    </script>
+</body>
+</html>
